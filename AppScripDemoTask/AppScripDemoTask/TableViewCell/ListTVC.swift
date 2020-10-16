@@ -1,5 +1,5 @@
 //
-//  HeaderTVC.swift
+//  ListTVC.swift
 //  AppScripDemoTask
 //
 //  Created by Shiwani manhas on 16/10/20.
@@ -8,10 +8,13 @@
 
 import UIKit
 
-class HeaderTVC: UITableViewCell {
-
-    @IBOutlet weak var btnDropDown: UIButton!
-    @IBOutlet weak var lblname: UILabel!
+class ListTVC: UITableViewCell {
+    
+    //MARK:- OUTLETS
+    @IBOutlet weak var lblDishname: UILabel!
+    @IBOutlet weak var imgDish: UIImageView!
+    
+    //MARK:- OVERRIDE FUNCTION
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

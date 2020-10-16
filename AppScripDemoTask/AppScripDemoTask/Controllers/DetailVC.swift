@@ -9,12 +9,18 @@
 import UIKit
 
 class DetailVC: UIViewController {
+    
+    //MARK:- INETERNAL FUNCTION
     var dtaDish : DishList!
     var callBackData : ((Bool) -> Void)?
+    
+    //MARK:- OUTLETS
     @IBOutlet weak var btnSelected: UIButton!
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var imgView: UIImageView!
+    
+    //MARK:- OVERRIDE FUNCTION
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Detail"
@@ -34,6 +40,11 @@ class DetailVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+
+}
+ //MARK:- EXTERNAL FUNCTION
+extension DetailVC{
     @objc func btnSelectedAct(_ sender : UIButton){
         if sender.currentTitle == "Selected"{
             sender.setTitle("UnSelected", for: .normal)
@@ -44,5 +55,4 @@ class DetailVC: UIViewController {
         }
         self.navigationController?.popViewController(animated: true)
     }
-
 }

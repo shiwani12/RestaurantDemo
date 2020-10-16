@@ -141,27 +141,31 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3B-he-U9c">
-                                                            <rect key="frame" x="16" y="8" width="358" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="16" y="8" width="44.5" height="46"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORw-Hu-VMT">
-                                                            <rect key="frame" x="382" y="19" width="24" height="24"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORw-Hu-VMT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="ORw-Hu-VMT" secondAttribute="height" multiplier="1:1" id="A9s-sR-XyD"/>
                                                                 <constraint firstAttribute="height" constant="24" id="jou-Gz-Ys8"/>
                                                             </constraints>
+                                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
                                                             <state key="normal" image="ArrowDown"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="ORw-Hu-VMT" secondAttribute="trailing" constant="8" id="9BL-SO-wdr"/>
-                                                        <constraint firstItem="ORw-Hu-VMT" firstAttribute="centerY" secondItem="d3B-he-U9c" secondAttribute="centerY" id="N7T-Xo-W5t"/>
+                                                        <constraint firstItem="ORw-Hu-VMT" firstAttribute="top" secondItem="aQ5-x1-6yr" secondAttribute="top" id="8jI-yH-jIM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ORw-Hu-VMT" secondAttribute="trailing" id="9BL-SO-wdr"/>
+                                                        <constraint firstItem="ORw-Hu-VMT" firstAttribute="leading" secondItem="aQ5-x1-6yr" secondAttribute="leading" id="QiL-aJ-CcJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ORw-Hu-VMT" secondAttribute="bottom" id="aCQ-Gb-Jbb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ORw-Hu-VMT" secondAttribute="trailing" id="bi2-JQ-Eo4"/>
                                                         <constraint firstItem="d3B-he-U9c" firstAttribute="top" secondItem="aQ5-x1-6yr" secondAttribute="top" constant="8" id="gEc-c1-y55"/>
+                                                        <constraint firstAttribute="trailing" secondItem="d3B-he-U9c" secondAttribute="trailing" constant="16" id="p1I-uM-sND"/>
                                                         <constraint firstItem="d3B-he-U9c" firstAttribute="leading" secondItem="aQ5-x1-6yr" secondAttribute="leading" constant="16" id="q3H-dq-dhk"/>
-                                                        <constraint firstItem="ORw-Hu-VMT" firstAttribute="leading" secondItem="d3B-he-U9c" secondAttribute="trailing" constant="8" id="xja-H7-OMq"/>
                                                         <constraint firstAttribute="bottom" secondItem="d3B-he-U9c" secondAttribute="bottom" constant="8" id="zIS-eI-F28"/>
                                                     </constraints>
                                                 </view>

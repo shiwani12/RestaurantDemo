@@ -9,8 +9,13 @@
 import UIKit
 
 class BannerTVC: UITableViewCell {
+    //MARK:- INTERNAL VARIABLES
     var bannerDta : [BannerList] = []
+    
+    //MARK:- OUTLETS
     @IBOutlet weak var cllectionView: UICollectionView!
+    
+    //MARK:- OVERRIDE FUNCTION
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,6 +28,7 @@ class BannerTVC: UITableViewCell {
     }
 
 }
+//MARK:- DELEGATE FUNTION
 extension BannerTVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bannerDta.count

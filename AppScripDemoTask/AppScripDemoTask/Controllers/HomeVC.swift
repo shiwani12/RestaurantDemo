@@ -16,13 +16,14 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"
+        //DATE SET
         dataRestaurant = RestaurantModal(resturant: [RestaurantList(name: "Pizza", dishListArr: [DishList(name: "Veg Pizza", image: Asset.vegpizza.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Onion Pizza", image: Asset.onionpizza.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Corn Pizza", image: Asset.cornpizza.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Cheese Pizza", image: Asset.cheesepizza.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Cheese Pizza", image: Asset.capsicumpizza.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Farm House Pizza", image: Asset.FramHouse.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false)]),RestaurantList(name: "Burgers", dishListArr: [DishList(name: "Smash Burger", image: Asset.smashburger.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Mix Veg Burger", image: Asset.mixvegburger.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Hamburger", image: Asset.hamburger.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false)]),RestaurantList(name: "Beverages", dishListArr: [DishList(name: "Coco Cola", image: Asset.cock.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Mix Mango Juice", image: Asset.mangojuice.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Sprite", image: Asset.sprite.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false)]),RestaurantList(name: "Snacks", dishListArr: [DishList(name: "Vanilla Cake", image: Asset.vanillacake.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Cheese Burger", image: Asset.cheeseburger.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false),DishList(name: "Grilled Sandwich", image: Asset.grilledsandwich.image, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", isselected: false)])], banner: [BannerList(image: Asset.Banner1.image),BannerList(image: Asset.Banner2.image),BannerList(image: Asset.Banner3.image),BannerList(image: Asset.Banner4.image)])
         // Do any additional setup after loading the view.
     }
     
-
-
 }
+
+//MARK:- TABLEVIEW DELEGATE
 extension HomeVC : UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         if dataRestaurant != nil{
@@ -53,8 +54,12 @@ extension HomeVC : UITableViewDelegate,UITableViewDataSource{
         return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.TVC.ListTVC, for: indexPath) as! ListTVC
+            if dataRestaurant.resturant[indexPath.section - 1 ].dishListArr[indexPath.row].isselected {
             cell.imgDish.image = dataRestaurant.resturant[indexPath.section - 1 ].dishListArr[indexPath.row].image
-            
+            cell.imgDish.addBlurEffect()
+            }else{
+            cell.imgDish.image = dataRestaurant.resturant[indexPath.section - 1 ].dishListArr[indexPath.row].image
+            }
             cell.lblDishname.text = dataRestaurant.resturant[indexPath.section - 1].dishListArr[indexPath.row].name
             return cell
         }
@@ -86,18 +91,7 @@ extension HomeVC : UITableViewDelegate,UITableViewDataSource{
             return nil
         }
     }
-    @objc func btnDropDownAct(_ sender : UIButton){
-        if selectedIndx != sender.tag {
-            self.thereIsCellTapped = true
-            self.selectedIndx = sender.tag
-        }
-        else {
-            // there is no cell selected anymore
-            self.thereIsCellTapped = false
-            self.selectedIndx = -1
-        }
-        tblView.reloadData()
-    }
+   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
             return UITableView.automaticDimension
@@ -117,4 +111,19 @@ extension HomeVC : UITableViewDelegate,UITableViewDataSource{
         }
     }
     
+}
+//MARK:- EXTERNAL FUNCTION
+extension HomeVC{
+    @objc func btnDropDownAct(_ sender : UIButton){
+           if selectedIndx != sender.tag {
+               self.thereIsCellTapped = true
+               self.selectedIndx = sender.tag
+           }
+           else {
+               // there is no cell selected anymore
+               self.thereIsCellTapped = false
+               self.selectedIndx = -1
+           }
+           tblView.reloadData()
+       }
 }

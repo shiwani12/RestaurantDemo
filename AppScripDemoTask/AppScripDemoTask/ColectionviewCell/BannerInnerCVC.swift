@@ -9,6 +9,6 @@
 import UIKit
 
 class BannerInnerCVC: UICollectionViewCell {
-    
+    //Mark:- ßOUTLETS
     @IBOutlet weak var imgView: UIImageView!
 }

@@ -40,14 +40,7 @@ enum Asset: String {
   case sprite = "sprite"
   case mangojuice = "mangojuice"
    case cock = "cock"
-  
-  
-  
- 
-  
-  
-  
-  var image: Image {
+   var image: Image {
     return Image(asset: self)
   }
 }
